@@ -35,9 +35,9 @@ namespace Castle.Windsor.MsDependencyInjection
             // Services in container are registered in backward order (using .IsDefault() - see WindsorRegistrationHelper.RegisterServiceDescriptor).
             // However we need to return them in original order when returning collection so let's reverse them here.
             // Following check is probably unnecessary but let's be defensive and don't expect that it's always array what we get.
-            if (items is Array)
+            if (items is Array array)
             {
-                Array.Reverse((Array) items);
+                Array.Reverse(array);
             }
             return items;
         }
